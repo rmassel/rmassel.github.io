@@ -5,12 +5,34 @@
    <meta name="GENERATOR" content="Microsoft FrontPage 4.0">
    <title>A Strange World</title>
 <style>
+   /* This CSS controls the specific tables we want to align */
+   table.aligned-table {
+       width: auto; /* Allow table to be only as wide as it needs to be */
+       border-collapse: collapse;
+   }
+   
+   /* Set a fixed width ONLY for the first column */
+   table.aligned-table td:first-child {
+       width: 160px; /* Adjust this number if you want them closer/farther */
+       vertical-align: top;
+   }
+   
+   /* The second column takes up whatever space is left naturally */
+   table.aligned-table td:last-child {
+       vertical-align: top;
+   }
 
+   /* Clean up list spacing */
+   table.aligned-table ul {
+       margin-top: 0;
+       margin-bottom: 0;
+       padding-left: 45px;
+   }
 </style>
 </head>
 <body bgcolor="#FFFFFF">
 <img SRC="faces_99_118.gif" height=118 width=99 align=RIGHT>
-<br>&nbsp;
+<br>
 <center><table>
 <tr>
 <td><b><i>Check your E-mail/ Messaging?</i></b>
@@ -29,7 +51,7 @@
 </ul>
 
 <b><i>Search the Net/ Research/ News?</i></b>
-  <table CELLPADDING=10 >
+<table class="aligned-table" CELLPADDING=10>
 <tr><td><ul>
 <li><a href="https://global.bing.com/?FORM=HPCNEN&setmkt=en-us&setlang=en-us" TARGET="_top">Bing</a></li>
 <li><a href="https://www.google.com" TARGET="_top">Google</a></li>
@@ -44,66 +66,47 @@
 </ul></td>
 </tr>
 </table>
+<br>
 
 <b><i>Work?</i></b>
-  <table CELLPADDING=10 >
+<table class="aligned-table" CELLPADDING=10>
 <tr><td><ul>
-<li><a href="https://edmentum.my.salesforce.com/" TARGET="_top">SalesForce</a></li>
-<li><a href="https://app.planhat.com/sso" TARGET="_top">Planhat</a></li>
-<li><a href="https://edmentum.highspot.com/" TARGET="_top">Highspot</a></li>
-<li><a href="https://auth.forma.ai/login?state=hKFo2SA1a005WDM2aC1FRE12cE54bGJwby15Z1BZMFYxYVpvMqFupWxvZ2luo3RpZNkgM3BHSl9jRlYteW1Wb3RJYmItWEpVYjBBaFJGejA3SkKjY2lk2SA2YmlrbHVKSDlmSGl0R3Z5NnNseEtMUEdsOUp0Z1BNRg&client=6bikluJH9fHitGvy6slxKLPGl9JtgPMF&protocol=oauth2&response_type=code&redirect_uri=https%3A%2F%2Flogin.forma.ai%2Fcallback&scope=openid%20email" TARGET="_top">Forma Dash</a></li>
-<li><a href="https://app.powerbi.com/groups/me/apps/9f7d8283-6322-4420-85ff-f13005ebf161/reports/2cc8f7ba-48e7-4d26-b984-be69dd90e912/ReportSection" TARGET="_top">Power BI</a></li>
-<li><a href="https://app.navan.com/app/user2/auth/eyJwcmV2aW91c1JvdXRlIjoiL2FwcC91c2VyMi8ifQ%3D%3D" TARGET="_top">Navan</a></li>
-<li><a href="https://mobifed.adp.com/oauth/client/v2/f8e7b62e-a57b-4606-b237-8da5c59bea3c?run=true&adpwf=true&appid=SECLIFION" TARGET="_top">ADP Lyric</a></li>
-<li><a href="https://edm.geniussis.com/" TARGET="_top">Genius SIS</a></li>
-<li><a href="https://login.calvertlearning.com/" TARGET="_top">Calvert SMS</a></li>
-<li><a href="https://edmentum-my.sharepoint.com/" TARGET="_top">Office 365</a>
-<li><a href="https://dev.azure.com/edmentum/ED/_workitems/recentlycreated/" TARGET="_top">Azure DevOps</a>
-<li><a href="https://edmentum.atlassian.net/wiki" TARGET="_top">Confluence</a>
-<li><a href="https://outlook.office.com/bookings/calendar" TARGET="_top">Bookings</a>
+<li><a href="https://www.linkedin.com/" TARGET="_top">LinkedIn</a></li>
+<li><a href="https://rmassel.medium.com/" TARGET="_top">Medium</a></li>
+
 </ul></td>
+
 <td><ul>
-<li><a href="https://login.edmentum.com/" TARGET="_top">Courseware & Exact Path</a></li>
-<li><a href="https://backoffice.edmentum.com/sea" TARGET="_top">Courseware & Exact Path SMS</a></li>
-<li><a href="https://f2.app.edmentum.com/exactpath/settings/partner-integration/nwea/sync-history/?view=manual-sync" TARGET="_top">Exact Path SMS Sync</a></li>
-<li><a href="https://app.studyisland.com/cfw/login/" TARGET="_top">Study Island</a></li>
-<li><a href="https://salesteam.studyisland.com/salesteam/index.cfm?err=1" TARGET="_top">Study Island SMS</a></li>
-<li><a href="https://www.apexvs.com/ApexUI/default.aspx" TARGET="_top">Apex</a> (Rick.Massel)</li>
-<li><a href="https://apexdemo.apexvs.com/ApexUI/default.aspx" TARGET="_top">Apex Demo</a> (NY_teacherdemo)</li>
-<li><a href="https://apexadminapp.edmentum.com/" TARGET="_top">Apex SMS</a> (Rick_Massel)</li>
-<li><a href="http://p2reportssrs01.seattle.apex/Reports/browse/" TARGET="_top">Apex Reports</a> (Rick_Massel)</li>
-<li><a href="https://edmentum.instructure.com/login/canvas" TARGET="_top">Canvas LTI Demo</a></li>
-<li><a href="https://app.schoology.com/" TARGET="_top">Schoology LTI Demo</a></li>
-<li><a href="https://edmentum.ultipro.com" TARGET="_top">Ulti Pro</a> (202106Mass)</li>
+<li><a href="https://kdp.amazon.com/en_US/" TARGET="_top">Kindle Publishing</a></li>
 <li><a href="https://tidycal.com/dashboard" TARGET="_top">TidyCal</a></li>
 </ul></td>
 </tr>
 </table>
+<br>
 
 <b><i>Bank?</i></b>
-  <table CELLPADDING=10 >
+<table class="aligned-table" CELLPADDING=10>
 <tr><td><ul>
 <li><a href="https://secure.everbank.com/LCDDigitalOneConsumer/#/Login" TARGET="_top">EverBank</a></li>
 <li><a href="https://secure.chase.com/web/auth/dashboard#/dashboard/overviewAccounts/overview/index" TARGET="_top">Chase</a></li>
-<li><a href="https://www.bankofamerica.com/" TARGET="_top">Bank of America</a></li>
+
 <li><a href="https://www.capitalone.com/" TARGET="_top">Capital One</a></li>
+<li><a href="https://www.bankofamerica.com/" TARGET="_top">Bank of America</a></li>
 <li><a href="https://www.citi.com/login" TARGET="_top">Citi Bank</a></li>
 <li><a href="https://login.coinbase.com/signin?client_id=258660e1-9cfe-4202-9eda-d3beedb3e118&oauth_challenge=ad84e827-9a8e-4c89-a4a6-8352c199cb24" TARGET="_top">Coinbase</a></li>
 </ul></td>
-<td><ul>
 
+<td><ul>
 <li><a href="https://client.schwab.com/Login/SignOn/CustomerCenterLogin.aspx" TARGET="_top">Charles Schwab</a></li>
 <li><a href="https://www.rbcwealthmanagement.com/us/en" TARGET="_top">RBC Wealth Management</a></li>
 <li><a href="https://login.computershare.com/identity/run/Login?wid=d8HgcCnj0UWkZgFzhGLaPw&theme=CPU#EnterUserId" TARGET="_top">Computershare</a></li>
-
 <li><a href="https://d.comenity.net/ac/bhphoto/public/home" TARGET="_top">B&H Payboo</a></li>
-
 <li><a href="https://omni.axisbank.co.in/axisretailbanking/" TARGET="_top">Axis Bank</a></li>
 <li><a href="https://ibparticulares.atlantico.ao/eBankit.Sites/eBankit.UI.Web.InternetBanking/login.aspx?code=23389146" TARGET="_top">Banco Atlantico</a></li>
-<br>
 </ul></td>
 </tr>
 </table>
+<br>
 
 <b><i>Find a Book?</i></b>
 <ul><a href="https://www.nypl.org" TARGET="_top">New York Public Library</a>
@@ -131,33 +134,7 @@
 <br><a href="https://invoicing.co/#/" TARGET="_top">Invoice Ninja</a>
 <br><a href="https://www.lonelyplanet.com/" TARGET="_top">Lonely Planet</a></ul>
   
-<!--<b><i>Visit your old sites?</i>(calverted)</b>
-<ul><a href="http://web.bu.edu/CGS/index.html" TARGET="_top">Boston University
-College of General Studies</a>
-<br><a href="http://www.mille.org/" TARGET="_top">Center for Millennial
-Studies</a></ul>
-<P><B><I>Find a job?</I></B></P>
-
-<UL>
-<P><A HREF="http://careers.boston.com/" TARGET="_top">Boston Globe Classifieds<BR>
-</A><A HREF="http://search.nytimes.com/classified/helpwant.html" TARGET="_top">New York Times Classifieds<BR>
-</A><A HREF="http://www.careerpath.com/res/owa/rb_applicant.display_rblogin?" TARGET="_top">CareerPath (Search many help wanted ads at once!)<BR>
-</A><A HREF="http://web.bu.edu/CAREERS/resources/joblist.html" TARGET="_top">Links to Online Job Postings</A></P>
-<li><a href="https://login.base.education/" TARGET="_top">BASE SMS</a></li>
-<li><a href="https://sso.readingeggs.com/" TARGET="_top">Reading Eggs</a> (Rick.Massel/ RF!!!)</li>
-<li><a href="https://re-admin.blake.com.au/admin" TARGET="_top">Reading Eggs SMS</a> (Rick.Massel.CRM/ RF!!!)</li>
-
-</UL>
-
-<P><B><I>Research Grad schools?</I></B></P>
-
-<UL>
-<P><A HREF="http://www4.usnews.com/usnews/edu/beyond/gdedut1.htm" TARGET="_top">USNews Education Schools Ranking<BR>
-</A><A HREF="http://www.utexas.edu/world/univ/" TARGET="_top">U.S. Universities &amp; Community Colleges</A> <BR>
-<A HREF="http://www.schoolguides.com/" TARGET="_top">Graduate School Guide Online</A> <BR>
-<A HREF="http://www.petersons.com/graduate/" TARGET="_top">Peterson's Education Center</A></P>
-</UL>
---></td>
+</td>
 </tr>
 </table></center>
 
