@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Future is Fiction Reading List | Rick Massel (Richard Massel)</title>
+    <meta name="description" content="The 26 sci-fi books that explain the future of AI, business, and strategy. Curated by Rick Massel (Richard Massel).">
+    
+    <style>
+        /* --- THEME: DEEP SPACE STRATEGY --- */
+        :root {
+            --bg: #0B1120; 
+            --card-bg: #1E293B;
+            --text-main: #F8FAFC;
+            --text-muted: #94A3B8;
+            --accent: #3B82F6; 
+            --accent-hover: #60A5FA;
+            --border: #334155;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            margin: 0;
+            background-color: var(--bg);
+        }
+
+        /* --- NAVIGATION --- */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            background: rgba(11, 17, 32, 0.95);
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .nav-brand { font-weight: 700; font-size: 1.2rem; color: white; text-transform: uppercase; letter-spacing: 1px; text-decoration: none;}
+        .nav-links a { margin-left: 20px; text-decoration: none; color: var(--text-muted); font-weight: 500; transition: color 0.3s;}
+        .nav-links a:hover { color: var(--accent); }
+        .nav-links a.active { color: white; border-bottom: 2px solid var(--accent); }
+
+        /* --- HEADER --- */
+        .library-header {
+            text-align: center;
+            padding: 80px 5%;
+            background: radial-gradient(circle at top, #1e293b 0%, #0B1120 70%);
+        }
+        .library-header h1 { font-size: 3rem; margin-bottom: 15px; color: white; }
+        .library-header p { font-size: 1.2rem; color: var(--text-muted); max-width: 700px; margin: 0 auto; }
+        
+        .act-divider {
+            grid-column: 1 / -1;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--border);
+            color: var(--accent);
+            font-size: 1.2rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* --- BOOK GRID --- */
+        .book-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 40px;
+            padding: 20px 5% 80px 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .book-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .book-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent);
+        }
+
+        /* The giant number in the background */
+        .book-number { 
+            position: absolute;
+            top: -20px;
+            right: -10px;
+            font-size: 8rem; 
+            font-weight: 900; 
+            color: rgba(255,255,255,0.03); 
+            line-height: 1;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .book-content { position: relative; z-index: 1; display: flex; flex-direction: column; height: 100%; }
+        
+        .book-title { font-size: 1.5rem; font-weight: 700; color: white; margin: 0 0 5px 0; line-height: 1.2; }
+        .book-author { color: var(--accent); font-size: 1rem; margin-bottom: 20px; display: block; font-weight: 500;}
+
+        .book-lesson {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            flex-grow: 1;
+            margin-bottom: 25px;
+            border-left: 2px solid #334155;
+            padding-left: 15px;
+        }
+
+        .amazon-btn {
+            background-color: transparent;
+            border: 1px solid var(--border);
+            color: var(--text-muted);
+            padding: 12px 0;
+            text-align: center;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        .amazon-btn:hover {
+            background-color: var(--accent);
+            border-color: var(--accent);
+            color: white;
+        }
+
+        footer { text-align: center; padding: 60px 5%; color: #475569; font-size: 0.9rem; border-top: 1px solid var(--border); }
+        
+        @media (max-width: 768px) {
+            .library-header h1 { font-size: 2rem; }
+            .book-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html" class="nav-brand">Rick Massel</a>
+        <div class="nav-links">
+            <a href="index.html#book">The Book</a>
+            <a href="index.html#articles">Writing</a>
+            <a href="index.html#about">About</a>
+            <a href="library.html" class="active">Reading List</a>
+        </div>
+    </nav>
+    
+    <div class="library-header">
+        <h1>The Curriculum</h1>
+        <p>The future isn't hidden. It's published. <br>These are the 26 books that form the strategic backbone of <em>The Future is Fiction</em>.</p>
+    </div>
+
+    <div class="book-grid">
+
+        <div class="act-divider">Act I: The Initiation (Building the Machine)</div>
+
+        <div class="book-card">
+            <span class="book-number">01</span>
+            <div class="book-content">
+                <h3 class="book-title">Foundryside</h3>
+                <span class="book-author">Robert Jackson Bennett</span>
+                <p class="book-lesson">
+                    <strong>The Lesson: The "Hail Mary" Prompt.</strong> In a world where reality is coded, Bennett explores the dangers of "scrivening" (coding) without understanding the source—a perfect metaphor for blindly trusting LLM outputs.
+                </p>
+                <a href="https://www.amazon.com/s?k=Foundryside+Robert+Jackson+Bennett" class="amazon-btn" target="_blank">Buy on Amazon &rarr;</a>
+            </div>
+        </div>
+
+        <div class="book-card">
+            <span class="book-number">02</span>
+            <div class="book-content">
+                <h3 class="book-title">Lexicon</h3>
+                <span class="book-author">Max Barry</span>
+                <p class="book-lesson">
+                    <strong>The Lesson: Segmenting the AI.</strong> Words can program people. Barry's thriller is a masterclass in persuasion engineering and how language models can be weaponized against specific personality segments.
+                </p>
+                <a href="https://www.amazon.com/s?k=Lexicon+Max+Barry" class="amazon-btn" target="_blank">Buy on Amazon &rarr;</a>
+            </div>
+        </div>
+
+        <div class="book-card">
+            <span class="book-number">03</span>
+            <div class="book-content">
+                <h3 class="book-title">Syrup</h3>
+                <span class="book-author">Max Barry</span>
+                <p class="book-lesson">
+                    <strong>The Lesson: The Demo Economy.</strong> In the marketing world, perception is the only product. This satire exposes the "Vaporware Trap"—selling the promise of AI technology before it actually works.
+                </p>
+                <a href="https://www.amazon.com/s?k=Syrup+Max+Barry" class="amazon-btn" target="_blank">Buy on Amazon &rarr;</a>
+            </div>
+        </div>
+
+        <div class="book-card">
+            <span class="book-number">04</span>
+            <div class="book-content">
+                <h3 class="book-title">The Windup Girl</h3>
+                <span class="book-author">Paolo Bacigalupi</span>
+                <p class="book-lesson">
+                    <strong>The Lesson: Platform Dependency.</strong> A cautionary tale about "The Sterile Seed"—building your business on a closed platform where the vendor (or calorie company) owns your ability to survive.
+                </p>
+                <a href="https://www.amazon.com/s?k=The+Windup+Girl+Paolo+Bacigalupi" class="amazon-btn" target="_blank">Buy on Amazon &rarr;</a>
+            </div>
+        </div>
+
+        <div class="book-card">
+            <span class="book-number">05</span>
+            <div class="book-content">
+                <h3 class="book-title">Jurassic Park</h3>
+                <span class="book-author">Michael Crichton</span>
+                <p class="book-lesson">
+                    <strong>The Lesson: Innovation Governance.</strong> Beyond the dinosaurs, this is the definitive text on "The Hammond Error"—the catastrophe that occurs when rapid scaling outpaces safety and containment protocols.
+                </p>
+                <a href="https://www.amazon.com/s?k=Jurassic+Park+Michael+Crichton" class="amazon-btn" target="_blank">Buy on Amazon &rarr;</a>
+            </div>
+        </div>
+
+        <div class="act-divider">Act II: The Surveillance (Watching the Machine)</div>
+
+        <div class="book-card">
+            <span class="book-number">06</span>
+            <div class="book-content">
+                <h3 class="book-title">The Circle</h3>
+                <span class="book-author">Dave Eggers</span>
+                <p class="book-lesson">
+                    <strong>The Lesson: The Death of Privacy.</strong> Eggers explores "The Glass Employee"—the toxic result of a workplace culture that demands "Radical Transparency" and equates privacy with theft.
+                </p>
+                <a href="https://www.amazon.com/s?k=The+Circle+Dave+Eggers" class="amazon-btn" target="_blank">Buy on Amazon &rarr;</a>
+            </div>
+        </div>
+
+        <div class="book-card">
+            <span class="book-number">07</span>
+            <div class="book-content">
+                <h3 class="book-title">Silo (Wool)</h3>
+                <span class="book-author">Hugh Howey</span>
+                <p class="book-lesson">
+                    <strong>The Lesson: Sanitized Data.</strong> "The Green Dashboard" trap: How leadership creates a false reality by filtering data, leading to a disconnect between the metrics on the screen and the rot in the system.
+                </p>
+                <a href="https://www.amazon.com/s?k=Wool+Hugh+Howey" class="amazon-btn" target="_blank">Buy on Amazon &rarr;</a>
+            </div>
+        </div>
+
+        <div class="book-card">
+            <span class="book-number">08</span>
+            <div class="book-content">
+                <h3 class="book-title">The Minority Report</h3>
+                <span class="book-author">Philip K. Dick</span>
+                <p class="book-lesson">
+                    <strong>The Lesson: Predictive Analytics.</strong> We are entering the era of the "Pre-Crime Workplace," where algorithms judge employees not on what they have done, but on what the model predicts they might do.
+                </p>
+                <a href="https://www.amazon.com/s?k=The+Minority+Report+Philip+K+Dick" class="amazon-btn" target="_blank">Buy on Amazon &rarr;</a>
+            </div>
+        </div>
+
+        <div class="book-card">
+            <span class="book-number">09</span>
+            <div class="book-content">
+                <h3 class="book-title">Dark Matter</h3>
+                <span class="book-author">Blake Crouch</span>
+                <p class="book-lesson">
+                    <strong>The Lesson: Simulation Paralysis.</strong> A look at the "Optimization Trap." When you can simulate infinite futures, you risk becoming paralyzed, unable to choose the imperfect reality of the present.
+                </p>
+                <a href="https://www.amazon.com/s?k=Dark+Matter+Blake+Crouch" class="amazon-btn" target="_blank">Buy on Amazon &rarr;</a>
+            </div>
+        </div>
+
+        <div class="book-card">
+            <span class="book-number">10</span>
+            <div class="book-content">
+                <h3 class="book-title">Under The Dome</h3>
+                <span class="book-author">Stephen King</span>
+                <p class="book-lesson">
+                    <strong>The Lesson: Model Collapse.</strong> "The Toxic Fishbowl." King shows how a closed system, cut off from fresh inputs (like an AI trained only on its own data), inevitably turns toxic and collapses.
+                </p>
+                <a href="https://www.amazon.com/s?k=Under+The+Dome+Stephen+King" class="amazon-btn" target="_blank">Buy on Amazon &rarr;</a>
+            </div>
+        </div>
+
+        <div class="act-divider">Act III: The Grind (The Human Cost)</div>
+
+        <div class="book-card">
+            <span class="book-number">11</span>
+            <div class="book-content">
+                <h3 class="book-title">Company</h3>
+                <span class="book-author">Max Barry</span>
+                <p class="book-lesson">
+                    <strong>The Lesson: The Automation of Nonsense.</strong> "The Zephyr Effect." A hilarious and terrifying look at what happens when metrics become the goal, and employees optimize for KPIs that have no connection to value.
+                </p>
+                <a href="https://www.amazon.com/s?k=Company+Max+Barry" class="amazon-btn" target="_blank">Buy on Amazon &rarr;</a>
+            </div>
+        </div>
+
+        <div class="book-card">
+            <span class="book-number">12</span>
+            <div class="book-content">
+                <h3 class="book-title">The Warehouse</h3>
+                <span class="book-author">Rob Hart</span>
+                <p class="book-lesson">
+                    <strong>The Lesson: Micromanagement.</strong> "The Color-Coded Life." A dystopian look at the future of fulfillment centers, where algorithmic efficiency strips every ounce of agency from the human worker.
+                </p>
+                <a href="https://www.amazon.com/s?k=The+Warehouse+Rob+Hart" class="amazon-btn" target="_blank">Buy on Amazon &rarr;</a>
+            </div>
+        </div>
+
+        <div class="book-card">
+            <span class="book-number">13</span>
+            <div class="book-content">
+                <h3 class="book-title">Gun, with Occasional Music</h3>
+                <span class="book-author">Jonathan Lethem</span>
+                <p class="book-lesson">
+                    <strong>The Lesson: Gamified Reputation.</strong> "The Karma Trap." Lethem predicts a world where your social credit score determines your access to society, turning every interaction into a transactional game.
+                </p>
+                <a href="https://www.amazon.com/s?k=Gun+with+Occasional+Music+Jonathan+Lethem" class="amazon-btn" target="_blank">Buy on Amazon &rarr;</a>
+            </div>
+        </div>
+
+        <div class="book-card">
+            <span class="book-number">14</span>
+            <div class="book-content">
+                <h3 class="book-title">Machine Man</h3>
+                <span class="book-author">Max Barry</span>
+                <p class="book-lesson">
+                    <strong>The Lesson: Self-Optimization.</strong> "The Cyborg Trap." An engineer replaces his body parts to become more efficient, illustrating the dangerous obsession with optimizing oneself out of humanity.
+                </p>
+                <a href="https://www.amazon.com/s?k=Machine+Man+Max+Barry" class="amazon-btn" target="_blank">Buy on Amazon &rarr;</a>
+            </div>
+        </div>
+
+        <div class="book-card">
+            <span class="book-number">15</span>
+            <div class="book-content">
+                <h3 class="book-title">Dungeon Crawler Carl</h3>
+                <span class="book-author">Matt Dinniman</span>
+                <p class="book-lesson">
+                    <strong>The Lesson: Gamified Suffering.</strong> "The Achievement Trap." When survival is turned into content, participants are forced to perform for an algorithm that rewards engagement over ethics.
+                </p>
+                <a href="https://www.amazon.com/s?k=Dungeon+Crawler+Carl+Matt+Dinniman" class="amazon-btn" target="_blank">Buy on Amazon &rarr;</a>
+            </div>
+        </div>
+
+        <div class="book-card">
+            <span class="book-number">16</span>
+            <div class="book-content">
+                <h3 class="book-title">The Punch Escrow</h3>
+                <span class="book-author">Tal M. Klein</span>
+                <p class="book-lesson">
+                    <strong>The Lesson: Replacement Anxiety.</strong> "The Teleportation Trap." If AI can duplicate your output perfectly, does the "original" you still matter? A deep dive into the identity crisis of the knowledge worker.
+                </p>
+                <a href="https://www.amazon.com/s?k=The+Punch+Escrow+Tal+Klein" class="amazon-btn" target="_blank">Buy on Amazon &rarr;</a>
+            </div>
+        </div>
+
+        <div class="act-divider">Act IV: The Identity Crisis</div>
+
+        <div class="book-card">
+            <span class="book-number">17</span>
+            <div class="book-content">
+                <h3 class="book-title">Jennifer Government</h3>
+                <span class="book-author">Max Barry</span>
+                <p class="book-lesson">
+                    <strong>The Lesson: Corporate Feudalism.</strong> "The Barcode Tattoo." A satire of anarcho-capitalism where your employer is your surname, exploring the extreme end state of "brand ambassadorship."
+                </p>
+                <a href="https://www.amazon.com/s?k=Jennifer+Government+Max+Barry" class="amazon-btn" target="_blank">Buy on Amazon &rarr;</a>
+            </div>
+        </div>
+
+        <div class="book-card">
+            <span class="book-number">18</span>
+            <div class="book-content">
+                <h3 class="book-title">Divergent</h3>
+                <span class="book-author">Veronica Roth</span>
+                <p class="book-lesson">
+                    <strong>The Lesson: The Death of the Generalist.</strong> "The Faction Trap." A look at how organizations force employees into rigid boxes (factions), punishing the "Divergent" generalists who can think across domains.
+                </p>
+                <a href="https://www.amazon.com/s?k=Divergent+Veronica+Roth" class="amazon-btn" target="_blank">Buy on Amazon &rarr;</a>
+            </div>
+        </div>
+
+        <div class="book-card">
+            <span class="book-number">19</span>
+            <div class="book-content">
+                <h3 class="book-title">The Giver</h3>
+                <span class="book-author">Lois Lowry</span>
+                <p class="book-lesson">
+                    <strong>The Lesson: Institutional Memory.</strong> "The Beige Enterprise." When an organization erases its history to maintain "sameness" and stability, it loses the wisdom required to survive crisis.
+                </p>
+                <a href="https://www.amazon.com/s?k=The+Giver+Lois+Lowry" class="amazon-btn" target="_blank">Buy on Amazon &rarr;</a>
+            </div>
+        </div>
+
+        <div class="book-card">
+            <span class="book-number">20</span>
+            <div class="book-content">
+                <h3 class="book-title">Otherworld</h3>
+                <span class="book-author">Jason Segel & Kirsten Miller</span>
+                <p class="book-lesson">
+                    <strong>The Lesson: Preferring AI to Humans.</strong> "The Synthetic Trap." As virtual experiences become more vivid than reality, we risk designing systems that are addictive rather than functional.
+                </p>
+                <a href="https://www.amazon.com/s?k=Otherworld+Jason+Segel" class="amazon-btn" target="_blank">Buy on Amazon &rarr;</a>
+            </div>
+        </div>
+
+        <div class="book-card">
+            <span class="book-number">21</span>
+            <div class="book-content">
+                <h3 class="book-title">The Passage</h3>
+                <span class="book-author">Justin Cronin</span>
+                <p class="book-lesson">
+                    <strong>The Lesson: Homogenization.</strong> "The Corporate Hive Mind." A terrifying metaphor for groupthink, where individual identity is subsumed by a viral, singular directive.
+                </p>
+                <a href="https://www.amazon.com/s?k=The+Passage+Justin+Cronin" class="amazon-btn" target="_blank">Buy on Amazon &rarr;</a>
+            </div>
+        </div>
+
+        <div class="act-divider">Act V: The New World</div>
+
+        <div class="book-card">
+            <span class="book-number">22</span>
+            <div class="book-content">
+                <h3 class="book-title">The Store</h3>
+                <span class="book-author">James Patterson</span>
+                <p class="book-lesson">
+                    <strong>The Lesson: The Loss of Choice.</strong> "The Anticipatory Trap." Patterson predicts the endpoint of predictive shipping: when the algorithm knows what you want before you do, free will becomes obsolete.
+                </p>
+                <a href="https://www.amazon.com/s?k=The+Store+James+Patterson" class="amazon-btn" target="_blank">Buy on Amazon &rarr;</a>
+            </div>
+        </div>
+
+        <div class="book-card">
+            <span class="book-number">23</span>
+            <div class="book-content">
+                <h3 class="book-title">Futuristic Violence and Fancy Suits</h3>
+                <span class="book-author">David Wong</span>
+                <p class="book-lesson">
+                    <strong>The Lesson: Viral Liability.</strong> "The Gig Economy of Chaos." In a hyper-connected world, any individual can become a global threat (or viral sensation) overnight, making traditional risk management impossible.
+                </p>
+                <a href="https://www.amazon.com/s?k=Futuristic+Violence+and+Fancy+Suits" class="amazon-btn" target="_blank">Buy on Amazon &rarr;</a>
+            </div>
+        </div>
+
+        <div class="book-card">
+            <span class="book-number">24</span>
+            <div class="book-content">
+                <h3 class="book-title">Tomorrow, and Tomorrow, and Tomorrow</h3>
+                <span class="book-author">Gabrielle Zevin</span>
+                <p class="book-lesson">
+                    <strong>The Lesson: Creativity.</strong> "The Infinite Retry." A beautiful look at the iterative process of game design (and life). It teaches that failure is not the end, but a necessary mechanic of creation.
+                </p>
+                <a href="https://www.amazon.com/s?k=Tomorrow+and+Tomorrow+and+Tomorrow+Gabrielle+Zevin" class="amazon-btn" target="_blank">Buy on Amazon &rarr;</a>
+            </div>
+        </div>
+
+        <div class="book-card">
+            <span class="book-number">25</span>
+            <div class="book-content">
+                <h3 class="book-title">The Girl with All the Gifts</h3>
+                <span class="book-author">M.R. Carey</span>
+                <p class="book-lesson">
+                    <strong>The Lesson: The Hybrid Future.</strong> "The Melanie Doctrine." The future belongs not to the pure humans nor the monsters (AI), but to the hybrids who can synthesize both worlds.
+                </p>
+                <a href="https://www.amazon.com/s?k=The+Girl+with+All+the+Gifts+MR+Carey" class="amazon-btn" target="_blank">Buy on Amazon &rarr;</a>
+            </div>
+        </div>
+
+        <div class="book-card">
+            <span class="book-number">26</span>
+            <div class="book-content">
+                <h3 class="book-title">Daemon</h3>
+                <span class="book-author">Daniel Suarez</span>
+                <p class="book-lesson">
+                    <strong>The Lesson: Legacy Systems.</strong> "The Sobol Test." The ultimate question for the AI age: Are you building a system that empowers humanity, or a Daemon that will execute its code regardless of the human cost?
+                </p>
+                <a href="https://www.amazon.com/s?k=Daemon+Daniel+Suarez" class="amazon-btn" target="_blank">Buy on Amazon &rarr;</a>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Rick Massel (Richard Massel). All Rights Reserved.</p>
+        <p style="font-size: 0.8rem; margin-top: 10px; color: #334155;">
+            As an Amazon Associate I earn from qualifying purchases.
+        </p>
+    </footer>
+
+    <script>
+        const amazonTag = 'rmassel-20'; 
+        
+        document.addEventListener("DOMContentLoaded", function() {
+            const links = document.querySelectorAll('.amazon-btn');
+            
+            links.forEach(link => {
+                try {
+                    let url = new URL(link.href);
+                    if (url.hostname.includes('amazon')) {
+                        url.searchParams.set('tag', amazonTag);
+                        link.href = url.toString();
+                    }
+                } catch (e) {
+                    console.log("Skipping invalid link", link.href);
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
