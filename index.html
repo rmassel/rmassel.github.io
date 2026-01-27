@@ -321,7 +321,7 @@
             <a href="mailto:rmassel@hotmail.com" style="color: white; text-decoration: none; font-weight: 600;">rmassel@hotmail.com</a>
         </div>
         
-        <p style="margin-top: 40px; font-size: 0.8rem; color: #475569;">&copy; 2026 Rick Massel (Richard Massel). All Rights Reserved.</p>
+        <p style="margin-top: 40px; font-size: 0.8rem; color: #475569;">&copy; <span id="year"></span> Rick Massel (Richard Massel). All Rights Reserved.</p>
     </footer>
 
     <script>
@@ -371,5 +371,8 @@
             });
     </script>
 
+<script>
+        document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
 </body>
 </html>
