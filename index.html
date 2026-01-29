@@ -15,11 +15,9 @@
     <meta property="og:url" content="https://rmassel.com">
     <meta property="og:type" content="book">
     
-<link rel="icon" type="image/png" href="favicon.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="favicon.png" sizes="32x32">
     <link rel="icon" type="image/png" href="favicon.png" sizes="16x16">
-    
     <link rel="icon" type="image/png" href="favicon.png" sizes="192x192">
-    
     <link rel="apple-touch-icon" href="favicon.png">
 
     <script type="application/ld+json">
@@ -194,14 +192,6 @@
         .footer-links a { color: var(--text-muted); text-decoration: none; margin: 0 15px; }
         .footer-links a:hover { color: white; }
         
-        .verified-email {
-            background: rgba(255,255,255,0.1);
-            padding: 10px 20px;
-            border-radius: 50px;
-            display: inline-block;
-            margin-top: 20px;
-        }
-
         /* --- RESPONSIVE MOBILE FIX --- */
         @media (max-width: 768px) {
             h1 { font-size: 2.5rem; }
@@ -284,11 +274,18 @@
                 <p>
                     His perspective is shaped by a career that spans continents—from leading educational initiatives in 
                     India, China, and Angola to managing Customer Success strategy in the US. When he isn't decoding the latest AI models, 
-                    he is an endurance athlete who has trekked the Himalayas and visited over 60 countries.
+                    he is an <strong>avid cyclist</strong> and endurance athlete who has trekked the Himalayas and visited over 60 countries.
+                </p>
+                
+                <p style="margin-top: 25px;">
+                    <a href="https://richardmassel.com" target="_blank" style="color: #3B82F6; text-decoration: none; font-weight: 700; border-bottom: 2px solid #3B82F6;">
+                        View Executive Bio & Operational History &rarr;
+                    </a>
                 </p>
             </div>
 
-        </div> </section>
+        </div> 
+    </section>
 
     <section id="articles" class="latest-writing">
         <div class="section-header">
@@ -314,14 +311,7 @@
             <a href="https://www.amazon.com/dp/B0GHWGWJG6">Amazon</a>
         </div>
         
-        <hr style="border-color: #334155; margin: 40px auto; max-width: 200px;">
-
-        <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 5px;">Official Author Contact:</p>
-        <div class="verified-email">
-            <a href="mailto:rmassel@hotmail.com" style="color: white; text-decoration: none; font-weight: 600;">rmassel@hotmail.com</a>
-        </div>
-        
-        <p style="margin-top: 40px; font-size: 0.8rem; color: #475569;">&copy; <span id="year"></span> Rick Massel (Richard Massel). All Rights Reserved.</p>
+        <p style="font-size: 0.8rem; color: #475569; margin-top: 40px;">&copy; <span id="year"></span> Rick Massel (Richard Massel). All Rights Reserved.</p>
     </footer>
 
     <script>
@@ -371,7 +361,7 @@
             });
     </script>
 
-<script>
+    <script>
         document.getElementById("year").textContent = new Date().getFullYear();
     </script>
 </body>
