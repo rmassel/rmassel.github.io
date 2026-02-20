@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>Rick Massel (Richard Massel) | The Future is Fiction</title>
+    <title>Rick Massel (Richard Massel) | Author & Strategist</title>
     <meta name="description" content="The Sci-Fi Strategy Guide to Leading, Learning, and Surviving in the Age of AI. By Rick Massel.">
     <meta name="keywords" content="AI Strategy, Future of Work, Rick Massel, Richard Massel, Science Fiction, Business Strategy, Max Barry, Hugh Howey, Daniel Suarez">
     <meta name="author" content="Rick Massel">
     
-    <meta property="og:title" content="The Future is Fiction: AI Strategy Guide">
+    <meta property="og:title" content="Rick Massel | Author & Strategist">
     <meta property="og:description" content="Don't let the machine write your story. A strategic guide to the future of work through the lens of sci-fi.">
     <meta property="og:image" content="https://m.media-amazon.com/images/I/71+l2cVTqdL._SL1499_.jpg">
     <meta property="og:url" content="https://rmassel.com">
@@ -23,27 +23,15 @@
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "Book",
-      "name": "The Future is Fiction",
-      "author": {
-        "@type": "Person",
-        "name": "Rick Massel",
-        "alternateName": "Richard Massel", 
-        "url": "https://rmassel.com",
-        "sameAs": [
-          "https://www.linkedin.com/in/rickmassel/",
-          "https://rmassel.medium.com/",
-          "https://www.amazon.com/dp/B0GHWGWJG6"
-        ]
-      },
-      "image": "https://m.media-amazon.com/images/I/71+l2cVTqdL._SL1499_.jpg",
-      "description": "The Sci-Fi Strategy Guide to Leading, Learning, and Surviving in the Age of AI.",
-      "genre": "Business Strategy",
-      "offers": {
-        "@type": "Offer",
-        "availability": "https://schema.org/InStock",
-        "url": "https://www.amazon.com/dp/B0GHWGWJG6"
-      }
+      "@type": "Person",
+      "name": "Rick Massel",
+      "alternateName": "Richard Massel", 
+      "url": "https://rmassel.com",
+      "sameAs": [
+        "https://www.linkedin.com/in/rickmassel/",
+        "https://rmassel.medium.com/",
+        "https://www.amazon.com/dp/B0GHWGWJG6"
+      ]
     }
     </script>
 
@@ -82,15 +70,23 @@
         .nav-links a { margin-left: 20px; text-decoration: none; color: var(--text-muted); font-weight: 500; transition: color 0.3s;}
         .nav-links a:hover { color: var(--accent); }
 
-        /* --- HERO SECTION --- */
-        header {
+        /* --- HERO & BOOK SECTIONS --- */
+        header, .book-section {
             display: flex;
             flex-wrap: wrap;
             align-items: center;
             justify-content: center;
             padding: 80px 5%;
+        }
+        header {
             background: radial-gradient(circle at top right, #1e293b 0%, #0B1120 60%);
         }
+        .book-section {
+            background: #0f172a;
+            border-top: 1px solid #1e293b;
+            border-bottom: 1px solid #1e293b;
+        }
+
         .hero-text { flex: 1; min-width: 300px; padding-right: 50px; }
         .hero-image { flex: 0 0 320px; text-align: center; }
         
@@ -102,7 +98,7 @@
             border: 1px solid #334155;
         }
         
-        h1 { font-size: 3.5rem; line-height: 1.1; margin-bottom: 20px; color: white; }
+        h1, .book-title-heading { font-size: 3.5rem; line-height: 1.1; margin-bottom: 20px; color: white; margin-top: 0; border: none; padding-bottom: 0; }
         .subtitle { font-size: 1.4rem; font-weight: 300; color: var(--text-muted); margin-bottom: 30px; }
         .hero-description { color: var(--text-muted); margin-bottom: 15px; font-size: 1.05rem; }
         .seo-keywords { color: #cbd5e1; font-style: italic; font-size: 0.95rem; margin-bottom: 30px; border-left: 3px solid var(--accent); padding-left: 15px; }
@@ -120,31 +116,28 @@
         }
         .btn:hover { background-color: var(--accent-hover); transform: translateY(-2px); }
 
-        /* --- ABOUT SECTION (NEW LAYOUT) --- */
+        /* --- ABOUT SECTION --- */
         .about { padding: 80px 5%; max-width: 1000px; margin: 0 auto; text-align: left; }
-        .about h2 { font-size: 2.5rem; color: white; margin-bottom: 40px; text-align: center; }
+        .about h2 { font-size: 2.5rem; color: white; margin-bottom: 40px; text-align: center; border: none; }
         .about-highlight { color: white; font-weight: 500; }
         
-        /* Flex Container: Holds Image and Text side-by-side */
         .about-layout {
             display: flex;
-            align-items: flex-start; /* Aligns top of photo with top of text */
-            gap: 50px; /* Space between photo and text */
+            align-items: flex-start;
+            gap: 50px; 
         }
         
-        /* Left Column: Image */
         .about-image-col {
-            flex: 0 0 280px; /* Fixed width for image column */
+            flex: 0 0 280px; 
             max-width: 100%;
         }
 
-        /* Right Column: Text */
         .about-text-col {
-            flex: 1; /* Takes up all remaining space */
+            flex: 1; 
             color: var(--text-muted);
             font-size: 1.1rem;
         }
-        .about-text-col p { margin-bottom: 20px; } /* Spacing between paragraphs */
+        .about-text-col p { margin-bottom: 20px; }
 
         /* --- MEDIUM FEED SECTION --- */
         .latest-writing { padding: 80px 5%; background: #0f172a; border-top: 1px solid #1e293b; }
@@ -192,15 +185,28 @@
         .footer-links a { color: var(--text-muted); text-decoration: none; margin: 0 15px; }
         .footer-links a:hover { color: white; }
         
-        /* --- RESPONSIVE MOBILE FIX --- */
+        /* --- RESPONSIVE / LAYOUT FIXES --- */
+        
+        /* Creates the Zig-Zag on Desktop */
+        @media (min-width: 769px) {
+            .desktop-reverse {
+                flex-direction: row-reverse;
+            }
+            .desktop-reverse .hero-text {
+                padding-right: 0;
+                padding-left: 50px;
+            }
+        }
+
+        /* Mobile Fixes */
         @media (max-width: 768px) {
-            h1 { font-size: 2.5rem; }
-            header { flex-direction: column-reverse; text-align: center; }
+            h1, .book-title-heading { font-size: 2.5rem !important; }
+            header, .book-section { flex-direction: column-reverse; text-align: center; }
             .hero-text { padding-right: 0; margin-top: 40px; }
             
-            /* Stack the About section vertically on mobile */
+            /* Stack the About section vertically on mobile keeping image on top */
             .about-layout {
-                flex-direction: column;
+                flex-direction: column-reverse;
                 align-items: center;
                 gap: 30px;
             }
@@ -216,7 +222,7 @@
     <nav>
         <a href="index.html" class="nav-brand">Rick Massel</a>
         <div class="nav-links">
-            <a href="#book">The Book</a>
+            <a href="#book">Books</a>
             <a href="#articles">Writing</a>
             <a href="#about">About</a>
             <a href="library.html">Reading List</a>
@@ -245,20 +251,35 @@
         </div>
     </header>
 
+    <section id="upcoming" class="book-section desktop-reverse">
+        <div class="hero-text">
+            <p style="text-transform: uppercase; letter-spacing: 2px; font-size: 0.9rem; font-weight: 700; color: var(--accent);">Coming Soon</p>
+            <h2 class="book-title-heading">The Rear Guard</h2>
+            <p class="subtitle">Letters to a Recruit: The Art of Holding On</p>
+            
+            <p class="hero-description">
+                <strong>Two battlefields. Two reinventions. One lifeline.</strong>
+            </p>
+            <p class="hero-description">
+                When a recent college grad trades her freedom for the yellow footprints of Marine Corps Basic Training, a burnt-out school principal walking away from his career finds himself adrift in the New York City job market. Separated by 800 miles, he assigns himself a new mission: to be her Anchor by writing one letter every single day.
+            </p>
+            
+            <p class="seo-keywords" style="margin-bottom: 30px;">
+                <em>The Rear Guard</em> is a dual-memoir that captures the hilarious, painful, and profound art of holding on when the world tries to wear you down. It is a story for anyone currently stuck in the hallway between two doors.
+            </p>
+            
+            <span style="display: inline-block; border: 1px solid #334155; color: #94A3B8; padding: 12px 24px; border-radius: 6px; font-weight: 600; font-size: 0.95rem;">Release Date Pending</span>
+        </div>
+        <div class="hero-image">
+            <img src="rear-guard-cover.jpg" alt="The Rear Guard Book Cover">
+        </div>
+    </section>
+
     <section id="about" class="about">
         <h2>About Rick Massel</h2>
         
         <div class="about-layout">
             
-            <div class="about-image-col">
-                <img src="Rick-Massel-Richard-Massel-Kilimanjaro.jpg" 
-                     alt="Author Rick Massel climbing Mount Kilimanjaro" 
-                     style="width: 100%; border-radius: 12px; border: 2px solid #3B82F6; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
-                <p style="font-size: 0.8rem; color: #94A3B8; text-align: center; margin-top: 10px; font-style: italic;">
-                    "Strategy is endurance."
-                </p>
-            </div>
-
             <div class="about-text-col">
                 <p>
                     Rick Massel (Richard Massel) operates at the <span class="about-highlight">intersection of human systems and digital change</span>. 
@@ -284,13 +305,22 @@
                 </p>
             </div>
 
+            <div class="about-image-col">
+                <img src="Rick-Massel-Richard-Massel-Kilimanjaro.jpg" 
+                     alt="Author Rick Massel climbing Mount Kilimanjaro" 
+                     style="width: 100%; border-radius: 12px; border: 2px solid #3B82F6; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+                <p style="font-size: 0.8rem; color: #94A3B8; text-align: center; margin-top: 10px; font-style: italic;">
+                    "Strategy is endurance."
+                </p>
+            </div>
+
         </div> 
     </section>
 
     <section id="articles" class="latest-writing">
         <div class="section-header">
             <h2 style="color: white;">Latest Insights</h2>
-            <p style="color: var(--text-muted);">From Medium, Data Driven Investor, and Towards AI</p>
+            <p style="color: var(--text-muted);">From Medium, Data Driven Investor, Towards AI, Illumination, and Activated Thinker</p>
         </div>
         
         <div class="articles-grid" id="medium-feed">
