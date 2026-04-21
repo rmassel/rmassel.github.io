@@ -1,3 +1,18 @@
+title: "Rick Massel"
+description: "Strategic parables and insights from Rick Massel—educator, strategist, and author exploring leadership, survival, and technology in the age of AI."
 url: "https://rmassel.com"
+
+author:
+  name: "Rick Massel"
+
+social:
+  name: "Rick Massel"
+  links:
+    - https://www.linkedin.com/in/rickmassel
+    - https://www.amazon.com/stores/Rick-Massel/author/B0GFGBCT56
+    - https://www.goodreads.com/author/show/68064650.Rick_Massel
+    - https://rmassel.medium.com/
+
 plugins:
   - jekyll-sitemap
+  - jekyll-seo-tag
