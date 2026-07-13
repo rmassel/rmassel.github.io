@@ -96,22 +96,45 @@ description: "Professional media, conference appearances, and updates from autho
             border-color: var(--accent);
         }
 
-        /* --- UPDATED IMAGE WRAPPER CSS --- */
         .gallery-image-wrapper {
             width: 100%;
-            height: 300px; /* Forces every image box to be exactly the same height */
+            height: 300px; 
             border-radius: 8px;
             overflow: hidden;
             margin-bottom: 20px;
             background-color: var(--bg);
+            cursor: pointer; /* Indicates the image is clickable */
+            position: relative;
+        }
+
+        /* Subtle indicator that hints the image expands */
+        .gallery-image-wrapper::after {
+            content: '🔍 Zoom';
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: rgba(11, 17, 32, 0.8);
+            color: white;
+            padding: 4px 10px;
+            font-size: 0.75rem;
+            border-radius: 4px;
+            opacity: 0;
+            transition: opacity 0.2s ease;
+        }
+        .gallery-image-wrapper:hover::after {
+            opacity: 1;
         }
 
         .gallery-image-wrapper img {
             width: 100%;
             height: 100%; 
-            object-fit: cover; /* Fills the box perfectly without distorting the photo */
-            object-position: top center; /* Anchors the crop to the top so faces stay visible */
+            object-fit: cover; 
+            object-position: top center; 
             display: block;
+            transition: opacity 0.2s ease;
+        }
+        .gallery-image-wrapper:hover img {
+            opacity: 0.85;
         }
 
         .gallery-caption {
@@ -130,6 +153,51 @@ description: "Professional media, conference appearances, and updates from autho
             font-size: 1.1rem;
         }
 
+        /* --- LIGHTBOX POPUP MODAL STYLES --- */
+        .lightbox-modal {
+            display: none; /* Hidden by default */
+            position: fixed;
+            z-index: 200; /* Above nav bar */
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(11, 17, 32, 0.95); /* Deep dark background matching theme */
+            justify-content: center;
+            align-items: center;
+            cursor: zoom-out;
+        }
+
+        .lightbox-content {
+            max-width: 90%;
+            max-height: 85vh;
+            object-fit: contain; /* Ensures the uncropped, natural image scales inside viewport */
+            border-radius: 6px;
+            border: 1px solid var(--border);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.8);
+            animation: zoomIn 0.25s ease-out;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 35px;
+            color: var(--text-muted);
+            font-size: 40px;
+            font-weight: 300;
+            transition: color 0.2s;
+            cursor: pointer;
+            line-height: 1;
+        }
+        .lightbox-close:hover {
+            color: white;
+        }
+
+        @keyframes zoomIn {
+            from { transform: scale(0.95); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
         /* --- FOOTER --- */
         footer { text-align: center; padding: 60px 5%; color: #475569; font-size: 0.9rem; border-top: 1px solid var(--border); }
         .footer-links a { color: var(--text-muted); text-decoration: none; margin: 0 15px; }
@@ -138,6 +206,7 @@ description: "Professional media, conference appearances, and updates from autho
         @media (max-width: 768px) {
             .media-header h1 { font-size: 2rem; }
             .gallery-grid { grid-template-columns: 1fr; }
+            .lightbox-close { top: 10px; right: 20px; font-size: 35px; }
         }
     </style>
 </head>
@@ -166,8 +235,7 @@ description: "Professional media, conference appearances, and updates from autho
         <!-- Image 1: AI Conference -->
         <figure class="gallery-item">
             <div class="gallery-image-wrapper">
-                <!-- Absolute path with leading slash -->
-                <img src="/photos/rick-massel-ai-conference.webp" alt="Rick Massel at the AI Summit Series conference layout.">
+                <img src="/photos/rick-massel-ai-conference.webp" alt="Rick Massel at the AI Summit Series conference layout." class="clickable-img">
             </div>
             <figcaption class="gallery-caption">
                 <strong>The AI Summit Series</strong>
@@ -178,8 +246,7 @@ description: "Professional media, conference appearances, and updates from autho
         <!-- Image 2: NYC Winter -->
         <figure class="gallery-item">
             <div class="gallery-image-wrapper">
-                <!-- Absolute path with leading slash -->
-                <img src="/photos/rick-massel-nyc-winter.webp" alt="Rick Massel in a red beanie during a snowstorm at Bethesda Fountain in New York City.">
+                <img src="/photos/rick-massel-nyc-winter.webp" alt="Rick Massel in a red beanie during a snowstorm at Bethesda Fountain in New York City." class="clickable-img">
             </div>
             <figcaption class="gallery-caption">
                 <strong>Winter in New York City</strong>
@@ -190,8 +257,7 @@ description: "Professional media, conference appearances, and updates from autho
         <!-- Image 3: Giant Duck -->
         <figure class="gallery-item">
             <div class="gallery-image-wrapper">
-                <!-- Absolute path with leading slash -->
-                <img src="/photos/rick-massel-giant-duck.webp" alt="Rick Massel smiling next to a massive floating yellow rubber duck.">
+                <img src="/photos/rick-massel-giant-duck.webp" alt="Rick Massel smiling next to a massive floating yellow rubber duck." class="clickable-img">
             </div>
             <figcaption class="gallery-caption">
                 <strong>Finding the Humor in Scale</strong>
@@ -199,6 +265,12 @@ description: "Professional media, conference appearances, and updates from autho
             </figcaption>
         </figure>
 
+    </div>
+
+    <!-- LIGHTBOX MODAL STRUCTURE -->
+    <div id="lightbox" class="lightbox-modal">
+        <span class="lightbox-close">&times;</span>
+        <img id="lightbox-img" class="lightbox-content" src="" alt="Expanded media view">
     </div>
 
     <footer>
@@ -212,6 +284,43 @@ description: "Professional media, conference appearances, and updates from autho
         
         <p style="font-size: 0.8rem; margin-top: 40px;">&copy; <span id="year"></span> Rick Massel (Richard Massel). All Rights Reserved.</p>
     </footer>
+
+    <!-- LIGHTBOX INTERACTION SCRIPT -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const lightbox = document.getElementById("lightbox");
+            const lightboxImg = document.getElementById("lightbox-img");
+            const closeBtn = document.querySelector(".lightbox-close");
+            const imageWrappers = document.querySelectorAll(".gallery-image-wrapper");
+
+            // Open popup when clicking an image card wrapper
+            imageWrappers.forEach(wrapper => {
+                wrapper.addEventListener("click", function() {
+                    const img = this.querySelector(".clickable-img");
+                    lightbox.style.display = "flex";
+                    lightboxImg.src = img.src;
+                    lightboxImg.alt = img.alt;
+                    document.body.style.overflow = "hidden"; // Prevent background scrolling
+                });
+            });
+
+            // Close function
+            function closeLightbox() {
+                lightbox.style.display = "none";
+                lightboxImg.src = "";
+                document.body.style.overflow = "auto"; // Re-enable scrolling
+            }
+
+            // Close via close button, clicking the backdrop, or hitting 'Escape'
+            closeBtn.addEventListener("click", closeLightbox);
+            lightbox.addEventListener("click", function(e) {
+                if (e.target !== lightboxImg) closeLightbox();
+            });
+            document.addEventListener("keydown", function(e) {
+                if (e.key === "Escape" && lightbox.style.display === "flex") closeLightbox();
+            });
+        });
+    </script>
 
     <script>
         document.getElementById("year").textContent = new Date().getFullYear();
