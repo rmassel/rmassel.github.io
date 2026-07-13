@@ -103,11 +103,10 @@ description: "Professional media, conference appearances, and updates from autho
             overflow: hidden;
             margin-bottom: 20px;
             background-color: var(--bg);
-            cursor: pointer; /* Indicates the image is clickable */
+            cursor: pointer; 
             position: relative;
         }
 
-        /* Subtle indicator that hints the image expands */
         .gallery-image-wrapper::after {
             content: '🔍 Zoom';
             position: absolute;
@@ -129,7 +128,7 @@ description: "Professional media, conference appearances, and updates from autho
             width: 100%;
             height: 100%; 
             object-fit: cover; 
-            object-position: top center; 
+            object-position: center; /* Updated default to center */
             display: block;
             transition: opacity 0.2s ease;
         }
@@ -155,14 +154,14 @@ description: "Professional media, conference appearances, and updates from autho
 
         /* --- LIGHTBOX POPUP MODAL STYLES --- */
         .lightbox-modal {
-            display: none; /* Hidden by default */
+            display: none; 
             position: fixed;
-            z-index: 200; /* Above nav bar */
+            z-index: 200; 
             left: 0;
             top: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(11, 17, 32, 0.95); /* Deep dark background matching theme */
+            background-color: rgba(11, 17, 32, 0.95); 
             justify-content: center;
             align-items: center;
             cursor: zoom-out;
@@ -171,7 +170,7 @@ description: "Professional media, conference appearances, and updates from autho
         .lightbox-content {
             max-width: 90%;
             max-height: 85vh;
-            object-fit: contain; /* Ensures the uncropped, natural image scales inside viewport */
+            object-fit: contain; 
             border-radius: 6px;
             border: 1px solid var(--border);
             box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.8);
@@ -235,7 +234,7 @@ description: "Professional media, conference appearances, and updates from autho
         <!-- Image 1: AI Conference -->
         <figure class="gallery-item">
             <div class="gallery-image-wrapper">
-                <img src="/photos/rick-massel-ai-conference.webp" alt="Rick Massel at the AI Summit Series conference layout." class="clickable-img">
+                <img src="/photos/rick-massel-ai-conference.webp" alt="Rick Massel at the AI Summit Series conference layout." class="clickable-img" style="object-position: 10% 30%;">
             </div>
             <figcaption class="gallery-caption">
                 <strong>The AI Summit Series</strong>
@@ -246,7 +245,7 @@ description: "Professional media, conference appearances, and updates from autho
         <!-- Image 2: NYC Winter -->
         <figure class="gallery-item">
             <div class="gallery-image-wrapper">
-                <img src="/photos/rick-massel-nyc-winter.webp" alt="Rick Massel in a red beanie during a snowstorm at Bethesda Fountain in New York City." class="clickable-img">
+                <img src="/photos/rick-massel-nyc-winter.webp" alt="Rick Massel in a red beanie during a snowstorm at Bethesda Fountain in New York City." class="clickable-img" style="object-position: 100% 30%;">
             </div>
             <figcaption class="gallery-caption">
                 <strong>Winter in New York City</strong>
@@ -257,7 +256,7 @@ description: "Professional media, conference appearances, and updates from autho
         <!-- Image 3: Giant Duck -->
         <figure class="gallery-item">
             <div class="gallery-image-wrapper">
-                <img src="/photos/rick-massel-giant-duck.webp" alt="Rick Massel smiling next to a massive floating yellow rubber duck." class="clickable-img">
+                <img src="/photos/rick-massel-giant-duck.webp" alt="Rick Massel smiling next to a massive floating yellow rubber duck." class="clickable-img" style="object-position: 100% 30%;">
             </div>
             <figcaption class="gallery-caption">
                 <strong>Finding the Humor in Scale</strong>
