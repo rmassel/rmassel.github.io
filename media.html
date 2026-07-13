@@ -1,0 +1,213 @@
+---
+title: "Rick Massel | Photos, Media, and Appearances"
+description: "Professional media, conference appearances, and updates from author and strategist Rick Massel."
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    {% seo %}
+    
+    <link rel="icon" type="image/png" href="favicon.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="favicon.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="favicon.png" sizes="192x192">
+    <link rel="apple-touch-icon" href="favicon.png">
+
+    <style>
+        /* --- THEME: DEEP SPACE STRATEGY --- */
+        :root {
+            --bg: #0B1120; 
+            --card-bg: #1E293B;
+            --text-main: #F8FAFC;
+            --text-muted: #94A3B8;
+            --accent: #3B82F6; 
+            --accent-hover: #60A5FA;
+            --border: #334155;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            margin: 0;
+            background-color: var(--bg);
+        }
+
+        /* --- NAVIGATION --- */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            background: rgba(11, 17, 32, 0.95);
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .nav-brand { font-weight: 700; font-size: 1.2rem; color: white; text-transform: uppercase; letter-spacing: 1px; text-decoration: none;}
+        .nav-links a { margin-left: 20px; text-decoration: none; color: var(--text-muted); font-weight: 500; transition: color 0.3s;}
+        .nav-links a:hover { color: var(--accent); }
+
+        /* --- HEADER & INTRO --- */
+        .media-header {
+            text-align: center;
+            padding: 80px 5% 40px 5%;
+            background: radial-gradient(circle at top, #1e293b 0%, #0B1120 70%);
+        }
+        .media-header h1 { font-size: 3rem; margin-bottom: 15px; color: white; }
+        
+        .media-intro {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: left;
+            padding: 0 5%;
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
+        .media-intro p { margin-bottom: 20px; }
+        .media-intro strong { color: white; }
+        
+        /* --- MEDIA GALLERY GRID --- */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 40px;
+            padding: 40px 5% 80px 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+            align-items: start;
+        }
+
+        .gallery-item {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+            margin: 0;
+        }
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent);
+        }
+
+        .gallery-image-wrapper {
+            width: 100%;
+            border-radius: 8px;
+            overflow: hidden;
+            margin-bottom: 20px;
+            background-color: var(--bg);
+        }
+
+        .gallery-image-wrapper img {
+            width: 100%;
+            height: auto; /* Allows the image to display its natural height */
+            display: block;
+        }
+
+        .gallery-caption {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            flex-grow: 1;
+            border-left: 2px solid var(--accent);
+            padding-left: 15px;
+            margin-top: 10px;
+        }
+        
+        .gallery-caption strong {
+            color: white;
+            display: block;
+            margin-bottom: 5px;
+            font-size: 1.1rem;
+        }
+
+        /* --- FOOTER --- */
+        footer { text-align: center; padding: 60px 5%; color: #475569; font-size: 0.9rem; border-top: 1px solid var(--border); }
+        .footer-links a { color: var(--text-muted); text-decoration: none; margin: 0 15px; }
+        .footer-links a:hover { color: white; }
+        
+        @media (max-width: 768px) {
+            .media-header h1 { font-size: 2rem; }
+            .gallery-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="/" class="nav-brand">Rick Massel</a>
+        <div class="nav-links">
+            <a href="/#book">Books</a>
+            <a href="/#articles">Writing</a>
+            <a href="/#about">About</a>
+            <a href="/library/">Reading List</a>
+        </div>
+    </nav>
+    
+    <div class="media-header">
+        <h1>Media & Appearances</h1>
+    </div>
+
+    <div class="media-intro">
+        <p>Welcome to the official media and photography gallery for <strong>Rick Massel</strong>. As a Customer Success strategist and operational consultant based in the New York City metro area, Rick frequently documents his engagement with emerging technologies and industry events.</p>
+        <p>In addition to his corporate work, Rick is the author of the non-fiction business strategy guide, <em>The Future is Fiction</em>, and the dual-memoir, <em>The Rear Guard: Letters to a Recruit</em>. This page archives recent professional appearances, speaking engagements, and local projects.</p>
+    </div>
+
+    <div class="gallery-grid">
+
+        <!-- Image 1: AI Conference -->
+        <figure class="gallery-item">
+            <div class="gallery-image-wrapper">
+                <img src="photos/rick-massel-ai-conference.webp" alt="Rick Massel at the AI Summit Series conference layout.">
+            </div>
+            <figcaption class="gallery-caption">
+                <strong>The AI Summit Series</strong>
+                Rick Massel exploring emerging technological frameworks, artificial intelligence applications, and systems scaling at the AI Summit Series. 
+            </figcaption>
+        </figure>
+
+        <!-- Image 2: NYC Winter -->
+        <figure class="gallery-item">
+            <div class="gallery-image-wrapper">
+                <img src="photos/rick-massel-nyc-winter.webp" alt="Rick Massel in a red beanie during a snowstorm at Bethesda Fountain in New York City.">
+            </div>
+            <figcaption class="gallery-caption">
+                <strong>Winter in New York City</strong>
+                Rick Massel standing in front of Bethesda Fountain during a major winter snowstorm in Central Park, highlighting his local roots in the NYC metro area.
+            </figcaption>
+        </figure>
+
+        <!-- Image 3: Giant Duck -->
+        <figure class="gallery-item">
+            <div class="gallery-image-wrapper">
+                <img src="photos/rick-massel-giant-duck.webp" alt="Rick Massel smiling next to a massive floating yellow rubber duck.">
+            </div>
+            <figcaption class="gallery-caption">
+                <strong>Finding the Humor in Scale</strong>
+                While deeply focused on strategy and endurance, Rick Massel takes a moment to document encountering a massive, inflatable rubber duck, proving that corporate scale can sometimes be highly entertaining.
+            </figcaption>
+        </figure>
+
+    </div>
+
+    <footer>
+        <h3>Rick Massel</h3>
+        <p style="color: var(--text-muted);">New York City</p>
+        <div class="footer-links">
+            <a href="https://www.linkedin.com/in/rickmassel/">LinkedIn</a>
+            <a href="https://rmassel.medium.com/">Medium</a>
+            <a href="https://amzn.to/4sHUv9z">Amazon</a>
+        </div>
+        
+        <p style="font-size: 0.8rem; margin-top: 40px;">&copy; <span id="year"></span> Rick Massel (Richard Massel). All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
