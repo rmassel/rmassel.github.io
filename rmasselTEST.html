@@ -1,0 +1,402 @@
+---
+title: "Rick Massel | Author & Strategist"
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    {% seo %}
+    
+    <link rel="icon" type="image/png" href="favicon.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="favicon.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="favicon.png" sizes="192x192">
+    <link rel="apple-touch-icon" href="favicon.png">
+
+    <style>
+        /* --- THEME: DEEP SPACE STRATEGY --- */
+        :root {
+            --bg: #0B1120; 
+            --card-bg: #1E293B;
+            --text-main: #F8FAFC;
+            --text-muted: #94A3B8;
+            --accent: #3B82F6; 
+            --accent-hover: #60A5FA;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            margin: 0;
+            background-color: var(--bg);
+        }
+
+        /* --- NAVIGATION --- */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            background: rgba(11, 17, 32, 0.95);
+            border-bottom: 1px solid #334155;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .nav-brand { font-weight: 700; font-size: 1.2rem; color: white; text-transform: uppercase; letter-spacing: 1px; }
+        .nav-links a { margin-left: 20px; text-decoration: none; color: var(--text-muted); font-weight: 500; transition: color 0.3s;}
+        .nav-links a:hover { color: var(--accent); }
+
+        /* --- HERO & BOOK SECTIONS --- */
+        header, .book-section {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            padding: 80px 5%;
+        }
+        header {
+            background: radial-gradient(circle at top right, #1e293b 0%, #0B1120 60%);
+        }
+        .book-section {
+            background: #0f172a;
+            border-top: 1px solid #1e293b;
+            border-bottom: 1px solid #1e293b;
+        }
+
+        .hero-text { flex: 1; min-width: 300px; padding-right: 50px; }
+        .hero-image { flex: 0 0 320px; text-align: center; }
+        
+        .hero-image img { 
+            width: 100%; 
+            height: auto; 
+            border-radius: 4px; 
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            border: 1px solid #334155;
+        }
+        
+        h1, .book-title-heading { font-size: 3.5rem; line-height: 1.1; margin-bottom: 20px; color: white; margin-top: 0; border: none; padding-bottom: 0; }
+        .subtitle { font-size: 1.4rem; font-weight: 300; color: var(--text-muted); margin-bottom: 30px; }
+        .hero-description { color: var(--text-muted); margin-bottom: 15px; font-size: 1.05rem; }
+        .seo-keywords { color: #cbd5e1; font-style: italic; font-size: 0.95rem; margin-bottom: 30px; border-left: 3px solid var(--accent); padding-left: 15px; }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--accent);
+            color: white;
+            padding: 16px 32px;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: all 0.3s;
+            box-shadow: 0 4px 6px -1px rgba(59, 130, 246, 0.5);
+        }
+        .btn:hover { background-color: var(--accent-hover); transform: translateY(-2px); }
+        
+        .btn-ghost {
+            background-color: transparent;
+            border: 2px solid var(--accent);
+            color: white;
+            box-shadow: none;
+        }
+        .btn-ghost:hover {
+            background-color: rgba(59, 130, 246, 0.1);
+        }
+
+        /* --- ABOUT SECTION --- */
+        .about { padding: 80px 5%; max-width: 1000px; margin: 0 auto; text-align: left; }
+        .about h2 { font-size: 2.5rem; color: white; margin-bottom: 40px; text-align: center; border: none; }
+        .about-highlight { color: white; font-weight: 500; }
+        
+        .about-layout {
+            display: flex;
+            align-items: flex-start;
+            gap: 50px; 
+        }
+        
+        .about-image-col {
+            flex: 0 0 280px; 
+            max-width: 100%;
+        }
+
+        .about-text-col {
+            flex: 1; 
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
+        .about-text-col p { margin-bottom: 20px; }
+
+        /* --- MEDIUM FEED SECTION --- */
+        .latest-writing { padding: 80px 5%; background: #0f172a; border-top: 1px solid #1e293b; }
+        .section-header { text-align: center; margin-bottom: 50px; }
+        .articles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .article-card {
+            background: var(--card-bg);
+            border: 1px solid #334155;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: transform 0.3s, border-color 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+        .article-card:hover { transform: translateY(-5px); border-color: var(--accent); }
+        
+        .article-image {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            background-color: #334155;
+        }
+        
+        .article-content { padding: 25px; flex-grow: 1; display: flex; flex-direction: column; }
+        .article-date { font-size: 0.85rem; color: #64748B; margin-bottom: 10px; }
+        .article-title { 
+            font-size: 1.25rem; 
+            font-weight: 700; 
+            color: white; 
+            margin: 0 0 15px 0; 
+            text-decoration: none; 
+            line-height: 1.4;
+        }
+        .article-title:hover { color: var(--accent); }
+        .article-snippet { font-size: 0.95rem; color: var(--text-muted); flex-grow: 1; }
+
+        /* --- FOOTER & CONTACT --- */
+        footer { background: black; color: white; padding: 60px 5%; text-align: center; border-top: 1px solid #1e293b; }
+        .footer-links a { color: var(--text-muted); text-decoration: none; margin: 0 15px; }
+        .footer-links a:hover { color: white; }
+        
+        /* --- RESPONSIVE / LAYOUT FIXES --- */
+        @media (min-width: 769px) {
+            .desktop-reverse {
+                flex-direction: row-reverse;
+            }
+            .desktop-reverse .hero-text {
+                padding-right: 0;
+                padding-left: 50px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            h1, .book-title-heading { font-size: 2.5rem !important; }
+            header, .book-section { flex-direction: column-reverse; text-align: center; }
+            .hero-text { padding-right: 0; margin-top: 40px; }
+            
+            .about-layout {
+                flex-direction: column-reverse;
+                align-items: center;
+                gap: 30px;
+            }
+            .about-image-col {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="/" class="nav-brand">Rick Massel</a>
+        <div class="nav-links">
+            <a href="#rear-guard">Books</a>
+            <a href="#articles">Writing</a>
+            <a href="#about">About</a>
+            <a href="/library/">Reading List</a>
+            <a href="https://richardmassel.com/stories.html">Strategic Parables</a>
+        </div>
+    </nav>
+
+    <!-- HERO BOOK: THE REAR GUARD -->
+    <header id="rear-guard">
+        <div class="hero-text">
+            <p style="text-transform: uppercase; letter-spacing: 2px; font-size: 0.9rem; font-weight: 700; color: var(--accent);">Now Available</p>
+            <h1>The Rear Guard</h1>
+            <p class="subtitle">Letters to a Recruit: The Art of Holding On Through Basic Training and Finding Purpose in the In-Between</p>
+            
+            <p class="hero-description">
+                <strong>Two battlefields. Two reinventions. One lifeline.</strong>
+            </p>
+            <p class="hero-description">
+                When a recent college grad trades her freedom for the yellow footprints of Marine Corps Basic Training, a burnt-out school principal walking away from his career finds himself adrift in the New York City job market. Separated by 800 miles, he assigns himself a new mission: to be her Anchor by writing one letter every single day.
+            </p>
+            
+            <p class="seo-keywords" style="margin-bottom: 30px;">
+                <em>The Rear Guard</em> is a dual-memoir that captures the hilarious, painful, and profound art of holding on when the world tries to wear you down. It is a story for anyone currently stuck in the hallway between two doors.
+            </p>
+            
+            <div style="margin-top: 20px;">
+                <a href="https://amzn.to/4cccKz0" class="btn" style="margin-right: 15px; margin-bottom: 15px; vertical-align: top;">Buy on Amazon</a>
+                <a href="https://richardmassel.com/stories.html" class="btn btn-ghost" style="margin-bottom: 15px; vertical-align: top;">Read Strategic Parables</a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="rear-guard-cover.jpg" alt="The Rear Guard Book Cover">
+        </div>
+    </header>
+
+    <!-- SECONDARY BOOK: THE FUTURE IS FICTION -->
+    <section id="the-future-is-fiction" class="book-section desktop-reverse">
+        <div class="hero-text">
+            <p style="text-transform: uppercase; letter-spacing: 2px; font-size: 0.9rem; font-weight: 700; color: var(--accent);">Also Available</p>
+            <h2 class="book-title-heading">The Future is Fiction</h2>
+            <p class="subtitle">The Sci-Fi Strategy Guide to Leading, Learning, and Surviving in the Age of AI</p>
+            
+            <p class="hero-description">
+                Stop reading white papers. Start reading warnings. In <strong>26 tactical chapters</strong>, this guide decodes the future of work through the lens of the stories that predicted it.
+            </p>
+            
+            <p class="seo-keywords">
+                Featuring strategic analysis of <strong>Max Barry's</strong> corporate satire, the systemic collapse of <strong>Hugh Howey's</strong> <em>Silo</em>, the technocratic dominance of <strong>Daniel Suarez</strong>, and insights from <strong>Justin Cronin</strong>, <strong>Veronica Roth</strong>, and more.
+            </p>
+            
+            <div style="margin-top: 20px;">
+                <a href="https://amzn.to/41xtwT5" class="btn">Buy on Amazon</a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="https://m.media-amazon.com/images/I/71+l2cVTqdL._SL1499_.jpg" alt="The Future is Fiction Book Cover">
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <h2>About Rick Massel</h2>
+        
+        <div class="about-layout">
+            <div class="about-text-col">
+                <p>
+                    Rick Massel (Richard Massel) operates at the <span class="about-highlight">intersection of human systems and rapid change</span>. 
+                    A former New York City High School Principal turned SaaS strategist, he has spent two decades bridging the gap 
+                    between institutional reality and high-growth technology.
+                </p>
+                <p>
+                    He is the author of <em>The Rear Guard</em> and <em>The Future is Fiction</em>. While one explores the deeply personal crucible of career burnout alongside the grueling test of military basic training, and the other tackles the technological upheaval of artificial intelligence, both books share a core teaching method: the use of strategic parables. 
+                </p>
+                <p>
+                    By translating high-stakes challenges into accessible narratives, whether ancient stoic lessons or futuristic sci-fi scenarios, Rick equips readers with the mental frameworks they need to hold the line and find purpose in life's "in-between" moments. A regular contributor to <span class="about-highlight">Activated Thinker</span>, <span class="about-highlight">Illumination</span>, <span class="about-highlight">Data Driven Investor</span>, and <span class="about-highlight">Towards AI</span>, his writing focuses on applying practical strategy to modern challenges.
+                </p>
+                <p>
+                    His perspective is shaped by a career that spans continents, from leading educational initiatives in 
+                    India, China, and Angola to managing Customer Success strategy in the US. Outside of his professional work, 
+                    he is an <strong>avid cyclist</strong> and endurance athlete who has trekked the Himalayas, visited over 60 countries, and enjoys reading stories to his daughter, Maddie, and son, Rafi.
+                </p>
+                
+                <p style="margin-top: 25px;">
+                    <a href="https://richardmassel.com" target="_blank" style="color: #3B82F6; text-decoration: none; font-weight: 700; border-bottom: 2px solid #3B82F6;">
+                        View Executive Bio & Operational History &rarr;
+                    </a>
+                </p>
+            </div>
+
+            <div class="about-image-col">
+                <img src="Rick-Massel-Richard-Massel-Kilimanjaro.jpg" 
+                     alt="Author Rick Massel climbing Mount Kilimanjaro" 
+                     style="width: 100%; border-radius: 12px; border: 2px solid #3B82F6; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+                <p style="font-size: 0.8rem; color: #94A3B8; text-align: center; margin-top: 10px; font-style: italic;">
+                    "Strategy is endurance."
+                </p>
+            </div>
+        </div> 
+    </section>
+
+    <section id="articles" class="latest-writing">
+        <div class="section-header">
+            <h2 style="color: white;">Latest Insights</h2>
+            <p style="color: var(--text-muted);">From Medium, Data Driven Investor, Towards AI, Illumination, and Activated Thinker</p>
+        </div>
+        
+        <div class="articles-grid" id="medium-feed">
+            <p style="color: var(--text-muted); text-align: center; grid-column: 1 / -1;">Loading latest articles...</p>
+        </div>
+        
+        <div style="text-align: center; margin-top: 40px;">
+            <a href="https://rmassel.medium.com/" target="_blank" style="color: var(--accent); text-decoration: none; font-weight: 700; font-size: 1.1rem;">Read more on Medium &rarr;</a>
+        </div>
+    </section>
+
+    <footer>
+        <h3>Rick Massel</h3>
+        <p style="color: var(--text-muted);">New York City</p>
+        <div class="footer-links">
+            <a href="https://www.linkedin.com/in/rickmassel/">LinkedIn</a>
+            <a href="https://rmassel.medium.com/">Medium</a>
+            <a href="https://amzn.to/4sHUv9z">Amazon</a>
+        </div>
+        
+        <p style="font-size: 0.8rem; color: #475569; margin-top: 40px;">&copy; <span id="year"></span> Rick Massel (Richard Massel). All Rights Reserved.</p>
+    </footer>
+
+    <!-- ROBUST MEDIUM FEED FETCHER -->
+    <script>
+        const mediumUsername = 'rmassel'; 
+        const rssUrl = `https://medium.com/feed/@${mediumUsername}`;
+        const apiUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}`;
+
+        fetch(apiUrl)
+            .then(response => {
+                if (!response.ok) throw new Error('Network response was not ok');
+                return response.json();
+            })
+            .then(data => {
+                const container = document.getElementById('medium-feed');
+                if (!data || data.status !== 'ok' || !data.items || data.items.length === 0) {
+                    throw new Error('Invalid feed data payload');
+                }
+
+                let html = '';
+                data.items.slice(0, 3).forEach(item => {
+                    const pubDate = item.pubDate ? new Date(item.pubDate).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }) : '';
+                    
+                    let imageUrl = item.thumbnail;
+                    if (!imageUrl || !imageUrl.startsWith('http')) {
+                        const contentToScan = (item.content || '') + (item.description || '');
+                        const imgMatch = contentToScan.match(/<img[^>]+src="([^">]+)"/);
+                        if (imgMatch) {
+                            imageUrl = imgMatch[1];
+                        } else {
+                            imageUrl = 'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=600&auto=format&fit=crop';
+                        }
+                    }
+
+                    const rawText = item.description || item.content || '';
+                    let snippet = rawText.replace(/<[^>]*>?/gm, '').trim();
+                    snippet = snippet.length > 110 ? snippet.substring(0, 110) + '...' : snippet;
+
+                    html += `
+                        <div class="article-card">
+                            <img src="${imageUrl}" alt="Article thumbnail" class="article-image">
+                            <div class="article-content">
+                                <span class="article-date">${pubDate}</span>
+                                <a href="${item.link}" target="_blank" rel="noopener noreferrer" class="article-title">${item.title}</a>
+                                <p class="article-snippet">${snippet}</p>
+                            </div>
+                        </div>
+                    `;
+                });
+                
+                container.innerHTML = html;
+            })
+            .catch(error => {
+                console.error('Error fetching Medium feed:', error);
+                document.getElementById('medium-feed').innerHTML = `
+                    <div style="grid-column: 1 / -1; text-align: center; padding: 20px;">
+                        <p style="color: var(--text-muted); margin-bottom: 15px;">Read the latest strategy essays across Data Driven Investor, Towards AI, and Activated Thinker.</p>
+                        <a href="https://rmassel.medium.com" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">Browse on Medium</a>
+                    </div>
+                `;
+            });
+    </script>
+
+    <script>
+        document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
